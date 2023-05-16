@@ -1,0 +1,263 @@
+
+OrderHistory
+ProductDeliveryExpectation
+
+
+ProductSize(ProductId)
+ProductDeliveryExpectation(OrderId)
+ProductShop(StockAvailibilityCount)
+
+
+Tables-
+
+1. Product
+Id int AutoIncrement
+ProductCode varchar (auto generated with prefix of 2 zero) (eg : 001) (not null)
+ProductName varchar 
+MRP numeric
+Discount numeric
+Price numeric
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+2. ProductDeliveryExpectation
+Id int AutoIncrement
+OrderId int
+Date datetime
+IsFree bit
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+3. ProductDetails
+Heading
+Value
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+4. ProductAvailibilityMapper
+Id int AutoIncrement
+ProductId int
+ShopId int
+
+
+5. ProductImages
+Id int AutoIncrement
+ProductId int
+Image
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+6. Category
+Id int AutoIncrement
+CategoryName varchar
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+7. SubCategory
+Id int AutoIncrement
+CategoryId int
+SubCategoryName varchar
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+8. SubCategoryProductMapper
+Id int AutoIncrement
+ProductId int
+SubCategoryId int
+
+
+9. ProductType
+Id int AutoIncrement
+TypeName varchar
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+10. ProductSubType
+Id int AutoIncrement
+TypeId int
+SubTypeName varchar
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+11. SubTypeProductMapper
+Id int AutoIncrement
+SubTypeId int
+ProductId int
+
+
+12. ProductSize
+Id int AutoIncrement
+ProductId int
+Size numeric(18,2)
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+13. ProductShop
+Id int AutoIncrement
+ShopName varchar
+Address varchar
+StockAvailibilityCount int
+CountryId int
+StateId int
+CityId int
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+14. KartDetails
+Id int AutoIncrement
+ProductId int
+ProductCount int
+
+
+15. DeliveryAddress
+Id int AutoIncrement
+PermenentAdress varchar
+ShippingAdress varchar
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+16. AddressType
+Id int AutoIncrement
+AddressType varchar
+EmailAddress varchar
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+17. Country
+Id int AutoIncrement
+CountryName varchar
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+18. State
+Id int AutoIncrement
+CountryId int
+StateName varchar
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+19. City
+Id int AutoIncrement
+StateId int
+CityName varchar
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+20. PaymentMethod
+Id int AutoIncrement
+MethodName varchar
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+21. OrderDetails
+Id int AutoIncrement
+ProductId int
+TotalPrice Numeric
+SavedPrice Numeric
+Price Numeric
+PaymentMethodId int
+DeliveryAdressId int
+DeliveryDate datetime
+
+
+22. DeleiveryDetails
+Id int AutoIncrement
+DeleiveryDetails varchar
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+23. DelieveryDetailsOrderMapper
+Id int AutoIncrement
+DeliveryDetailsId int
+OrderId int
+DeleiveredDate datetime
+
+
+24. OrderHistory
+Id int AutoIncrement
+OrderId int
+DelieveryDetailsOrderMapperId
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+
+
+25. CustomerDetials
+Id int AutoIncrement
+CustomerCode varchar (auto generated with prefix of 2 zero) (eg : 001) (not null)
+FirstName varchar
+Lastname varchar
+CountryId int
+StateId int
+CityId int
+CustomerAdress varchar
+PiCode varchar
+EmailAdress varchar unique
+MobileNumber varchar(15) unique
+PanNumber varchar(12) unique
+PassportNumber varchar(20) unique
+Gender bit
+IsActive bit
+DateOfBirth datetime notnull
+CreationDate datetime
+CreatedBy varchar
+UpdationDate datetime
+UpdatedBy varchar
+IsDeleted bit notnull
+DeletedDate datetime
+
+
+
+https://justwowfactory.com/products/karma-glory-obsidian-bracelet?variant=41354235478180&currency=INR&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&&utm_source=google&utm_medium=cpc&utm_campaign=MG_P-Max_Feed-Only&gclid=EAIaIQobChMIjqjXt8Ll_gIVRkSdCR2gVwPIEAEYASACEgLSr_D_BwE
